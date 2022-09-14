@@ -4,6 +4,39 @@
   
   
   <entry>
+    <title>UVA1069</title>
+    <link href="/2022/09/14/UVA1069/"/>
+    <url>/2022/09/14/UVA1069/</url>
+    
+    <content type="html"><![CDATA[<h1 id="1uva1069-always-an-integer"><a class="markdownIt-Anchor" href="#1uva1069-always-an-integer"></a> 1.UVA1069 Always an integer</h1><h2 id="题目翻译"><a class="markdownIt-Anchor" href="#题目翻译"></a> 题目翻译</h2><p>给一个项数小于100的多项式，问其在任意整数下的值模D是否为0 。</p><h2 id="题目分析"><a class="markdownIt-Anchor" href="#题目分析"></a> 题目分析</h2><p>随机取若干个值，如果这些值都令多项式的取值都模D为0，那么这个多项式大概率是在模D意义下为0的。</p><p>那么考虑把值(1,2,3,4,….n+1)给带入方程，根据差分数组的性质，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo><mo>−</mo><mi>f</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(n+1)-f(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>为一个最高次项比f的最高次项小1的多项式，那么对于n阶的多项式计算出来n阶的差分即可变为一个常数，因为取模对于加减法有分配率，那么如果所有的差分值都模D为0，那么整个多项式无论取什么值都模D为0。那么就得出了做法。</p><h2 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">//</span><br><span class="hljs-comment">// Created by mrx on 2022/9/13.</span><br><span class="hljs-comment">//</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><br><span class="hljs-keyword">using</span> ll = <span class="hljs-type">long</span> <span class="hljs-type">long</span>;<br><br><span class="hljs-function">ll <span class="hljs-title">power</span><span class="hljs-params">(ll a, ll b, ll mod)</span> </span>&#123;<br>    ll ans = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span> (; b; b &gt;&gt;= <span class="hljs-number">1</span>, a = a * a % mod) <span class="hljs-keyword">if</span> (b &amp; <span class="hljs-number">1</span>)ans = a * ans % mod;<br>    <span class="hljs-keyword">return</span> ans;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br><span class="hljs-meta">#<span class="hljs-keyword">ifdef</span> LOCAL</span><br>    <span class="hljs-built_in">freopen</span>(<span class="hljs-string">&quot;in.txt&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>, stdin);<br><span class="hljs-meta">#<span class="hljs-keyword">endif</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">ifndef</span> LOCAL</span><br>    std::ios::<span class="hljs-built_in">sync_with_stdio</span>(<span class="hljs-literal">false</span>);<br>    std::cin.<span class="hljs-built_in">tie</span>(<span class="hljs-literal">nullptr</span>);<br>    std::cout.<span class="hljs-built_in">tie</span>(<span class="hljs-literal">nullptr</span>);<br><span class="hljs-meta">#<span class="hljs-keyword">endif</span></span><br>    std::string s;<br>    <span class="hljs-type">int</span> n = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span> (std::cin &gt;&gt; s &amp;&amp; s != <span class="hljs-string">&quot;.&quot;</span>) &#123;<br>        n++;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;Case &quot;</span> &lt;&lt; n;<br><br>        <span class="hljs-keyword">auto</span> check = [&amp;](std::string &amp;str) -&gt; <span class="hljs-type">bool</span> &#123;<br>            std::vector&lt;<span class="hljs-type">int</span>&gt; a, e;<br>            std::string poly = str.<span class="hljs-built_in">substr</span>(<span class="hljs-number">1</span>, str.<span class="hljs-built_in">find</span>(<span class="hljs-string">&#x27;/&#x27;</span>) - <span class="hljs-number">2</span>);<br>            <span class="hljs-type">int</span> ptr = <span class="hljs-number">0</span>, n = poly.<span class="hljs-built_in">size</span>();<br>            <span class="hljs-keyword">while</span> (ptr &lt; n) &#123;<br>                <span class="hljs-type">int</span> sig = <span class="hljs-number">1</span>;<br>                <span class="hljs-comment">//sign</span><br>                <span class="hljs-keyword">if</span> (poly[ptr] == <span class="hljs-string">&#x27;+&#x27;</span>) sig = <span class="hljs-number">1</span>, ptr++;<br>                <span class="hljs-keyword">if</span> (poly[ptr] == <span class="hljs-string">&#x27;-&#x27;</span>) sig = <span class="hljs-number">-1</span>, ptr++;<br><br>                <span class="hljs-comment">//计算系数</span><br>                <span class="hljs-type">int</span> digit = <span class="hljs-number">0</span>;<br>                <span class="hljs-keyword">while</span> (ptr &lt; n &amp;&amp; <span class="hljs-built_in">isdigit</span>(poly[ptr])) digit = digit * <span class="hljs-number">10</span> + poly[ptr++] - <span class="hljs-string">&#x27;0&#x27;</span>;<br>                <span class="hljs-comment">//常数</span><br>                <span class="hljs-keyword">if</span> (ptr == n) &#123;<br>                    a.<span class="hljs-built_in">push_back</span>(digit);<br>                    e.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">0</span>);<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    ptr++;<br>                    <span class="hljs-keyword">if</span> (digit == <span class="hljs-number">0</span>)digit = <span class="hljs-number">1</span>;<br>                    digit *= sig;<br>                    <span class="hljs-type">int</span> pw = <span class="hljs-number">0</span>;<br>                    <span class="hljs-keyword">if</span> (poly[ptr] == <span class="hljs-string">&#x27;^&#x27;</span>) &#123;<br>                        ptr++;<br>                        <span class="hljs-comment">//不为1次项k</span><br>                        <span class="hljs-keyword">while</span> (ptr &lt; n &amp;&amp; <span class="hljs-built_in">isdigit</span>(poly[ptr])) pw = pw * <span class="hljs-number">10</span> + poly[ptr++] - <span class="hljs-string">&#x27;0&#x27;</span>;<br>                    &#125; <span class="hljs-keyword">else</span> pw = <span class="hljs-number">1</span>;<br>                    a.<span class="hljs-built_in">push_back</span>(digit);<br>                    e.<span class="hljs-built_in">push_back</span>(pw);<br>                &#125;<br>            &#125;<br><br>            <span class="hljs-type">int</span> D = <span class="hljs-built_in">stoi</span>(str.<span class="hljs-built_in">substr</span>(str.<span class="hljs-built_in">find</span>(<span class="hljs-string">&#x27;/&#x27;</span>) + <span class="hljs-number">1</span>));<br><span class="hljs-comment">//            for (int i = 0; i &lt; a.size(); ++i)std::cerr &lt;&lt; a[i] &lt;&lt; &#x27;^&#x27; &lt;&lt; e[i] &lt;&lt; &#x27; &#x27;;</span><br>            std::cerr &lt;&lt; <span class="hljs-string">&#x27;\n&#x27;</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> x = <span class="hljs-number">1</span>; x &lt;= e[<span class="hljs-number">0</span>] + <span class="hljs-number">1</span>; ++x) &#123;<br>                ll ans = <span class="hljs-number">0</span>;<br>                <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; a.<span class="hljs-built_in">size</span>(); ++i) &#123;<br>                    ans = (ans + a[i] * <span class="hljs-built_in">power</span>(x, e[i], D) % D) % D;<br>                &#125;<br>                <span class="hljs-keyword">if</span> (ans)<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>        &#125;;<br><br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">check</span>(s))std::cout &lt;&lt; <span class="hljs-string">&quot;: Always an integer\n&quot;</span>;<br>        <span class="hljs-keyword">else</span> std::cout &lt;&lt; <span class="hljs-string">&quot;: Not always an integer\n&quot;</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>acm</category>
+      
+      <category>数学</category>
+      
+      <category>数论</category>
+      
+      <category>基础</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>数学</tag>
+      
+      <tag>数论</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>CF1728ERed-Black Pepper</title>
     <link href="/2022/09/09/CF1728E/"/>
     <url>/2022/09/09/CF1728E/</url>
@@ -15,7 +48,11 @@
       
       <category>acm</category>
       
-      <category>exgcd</category>
+      <category>数学</category>
+      
+      <category>数论</category>
+      
+      <category>模方程</category>
       
     </categories>
     
@@ -46,7 +83,7 @@
       
       <category>数学</category>
       
-      <category>容斥</category>
+      <category>数论</category>
       
       <category>莫反</category>
       
@@ -81,7 +118,7 @@
       
       <category>数学</category>
       
-      <category>容斥</category>
+      <category>数论</category>
       
       <category>莫反</category>
       
@@ -117,8 +154,6 @@
       <category>数学</category>
       
       <category>多项式</category>
-      
-      <category>题解</category>
       
     </categories>
     
@@ -194,8 +229,6 @@
       <tag>数学</tag>
       
       <tag>多项式</tag>
-      
-      <tag>复数</tag>
       
     </tags>
     
@@ -280,8 +313,6 @@
       <category>数学</category>
       
       <category>多项式</category>
-      
-      <category>题解</category>
       
     </categories>
     
