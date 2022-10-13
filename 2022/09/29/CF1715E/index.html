@@ -16,15 +16,15 @@
   <meta name="author" content="mrx">
   <meta name="keywords" content="algorithm,acm">
   
-    <meta name="description" content="1.CF1715 ELong Way Home  题目描述 有 nnn 座城市，城市间有 mmm 条双向道路，通过第 iii 条道路需要花费 wiw_iwi​ 的时间，任意两个城市之间都有航班，乘坐城市 uuu 和 vvv 之间的航班需要花费 (u−v)2(u-v)^2(u−v)2 的时间。 现在请对于任意城市 i(1≤i≤n)i(1 \le i \le n)i(1≤i≤n)，求出从城市 111">
+    <meta name="description" content="最短路">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CF1715E">
+<meta property="og:title" content="CF1715E ELong Way Home">
 <meta property="og:url" content="https://mrxyan6.github.io/2022/09/29/CF1715E/index.html">
 <meta property="og:site_name" content="mrx&#39;s blog">
-<meta property="og:description" content="1.CF1715 ELong Way Home  题目描述 有 nnn 座城市，城市间有 mmm 条双向道路，通过第 iii 条道路需要花费 wiw_iwi​ 的时间，任意两个城市之间都有航班，乘坐城市 uuu 和 vvv 之间的航班需要花费 (u−v)2(u-v)^2(u−v)2 的时间。 现在请对于任意城市 i(1≤i≤n)i(1 \le i \le n)i(1≤i≤n)，求出从城市 111">
+<meta property="og:description" content="最短路">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-29T12:38:00.000Z">
-<meta property="article:modified_time" content="2022-09-29T12:38:35.653Z">
+<meta property="article:modified_time" content="2022-10-13T12:53:45.382Z">
 <meta property="article:author" content="mrx">
 <meta property="article:tag" content="dp">
 <meta property="article:tag" content="数据结构">
@@ -33,7 +33,7 @@
   
   
   
-  <title>CF1715E - mrx&#39;s blog</title>
+  <title>CF1715E ELong Way Home - mrx&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="CF1715E"></span>
+            <span id="subtitle" data-typed-text="CF1715E ELong Way Home"></span>
           
         </div>
 
@@ -290,12 +290,14 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">CF1715E</h1>
+            <h1 style="display: none">CF1715E ELong Way Home</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="1cf1715-elong-way-home"><a class="markdownIt-Anchor" href="#1cf1715-elong-way-home"></a> 1.CF1715 ELong Way Home</h1>
+                <p>最短路</p>
+<span id="more"></span>
+<h1 id="1cf1715-elong-way-home"><a class="markdownIt-Anchor" href="#1cf1715-elong-way-home"></a> 1.CF1715 ELong Way Home</h1>
 <h2 id="题目描述"><a class="markdownIt-Anchor" href="#题目描述"></a> 题目描述</h2>
 <p>有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 座城市，城市间有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span> 条双向道路，通过第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 条道路需要花费 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>w</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">w_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 的时间，任意两个城市之间都有航班，乘坐城市 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">u</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span></span></span></span> 之间的航班需要花费 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>−</mo><mi>v</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(u-v)^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">u</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> 的时间。</p>
 <p>现在请对于任意城市 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo stretchy="false">(</mo><mn>1</mn><mo>≤</mo><mi>i</mi><mo>≤</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">i(1 \le i \le n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">i</span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.79549em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>，求出从城市 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 出发，到达城市 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 所需要的最短时间，注意从城市 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 的过程中<strong>最多乘坐 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 次航班</strong>。</p>
@@ -365,7 +367,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>CF1715E</div>
+      <div>CF1715E ELong Way Home</div>
       <div>https://mrxyan6.github.io/2022/09/29/CF1715E/</div>
     </div>
     <div class="license-meta">
@@ -408,9 +410,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/10/04/cfgym103931C/" title="cfgym103931C">
+                      <a href="/2022/10/04/cfgym103931C/" title="cfgym103931C CCoffee Overdose">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">cfgym103931C</span>
+                        <span class="hidden-mobile">cfgym103931C CCoffee Overdose</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -418,8 +420,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/09/27/CF461B/" title="CF461B">
-                        <span class="hidden-mobile">CF461B</span>
+                      <a href="/2022/09/27/CF461B/" title="CF461B Appleman and Tree">
+                        <span class="hidden-mobile">CF461B Appleman and Tree</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

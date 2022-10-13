@@ -18,13 +18,13 @@
   
     <meta name="description" content="莫反入门题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SP7001">
+<meta property="og:title" content="SP7001 VLATTICE - Visible Lattice Points">
 <meta property="og:url" content="https://mrxyan6.github.io/2022/09/23/SP7001/index.html">
 <meta property="og:site_name" content="mrx&#39;s blog">
 <meta property="og:description" content="莫反入门题">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-23T12:01:14.000Z">
-<meta property="article:modified_time" content="2022-09-23T15:29:57.332Z">
+<meta property="article:modified_time" content="2022-10-13T12:43:32.067Z">
 <meta property="article:author" content="mrx">
 <meta property="article:tag" content="数学">
 <meta property="article:tag" content="莫反">
@@ -33,7 +33,7 @@
   
   
   
-  <title>SP7001 - mrx&#39;s blog</title>
+  <title>SP7001 VLATTICE - Visible Lattice Points - mrx&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="SP7001"></span>
+            <span id="subtitle" data-typed-text="SP7001 VLATTICE - Visible Lattice Points"></span>
           
         </div>
 
@@ -290,14 +290,14 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">SP7001</h1>
+            <h1 style="display: none">SP7001 VLATTICE - Visible Lattice Points</h1>
             
             
               <div class="markdown-body">
                 
                 <p>莫反入门题</p>
 <span id="more"></span>
-<h1 id="4sp7001vlattice-visible-lattice-points"><a class="markdownIt-Anchor" href="#4sp7001vlattice-visible-lattice-points"></a> 4.SP7001VLATTICE - Visible Lattice Points</h1>
+<h1 id="4sp7001-vlattice-visible-lattice-points"><a class="markdownIt-Anchor" href="#4sp7001-vlattice-visible-lattice-points"></a> 4.SP7001 VLATTICE - Visible Lattice Points</h1>
 <h2 id="题面翻译"><a class="markdownIt-Anchor" href="#题面翻译"></a> 题面翻译</h2>
 <p>给定一个  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>×</mo><mi>N</mi><mo>×</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">N \times N \times N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span></span> 的立方体，点的编号分别从  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mn>0</mn><mo separator="true">,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(0,0,0)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span> 到  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mi>N</mi><mo separator="true">,</mo><mi>N</mi><mo separator="true">,</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(N,N,N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span>。</p>
 <p>求有多少个点从点  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mn>0</mn><mo separator="true">,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(0,0,0)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span> 处能看见或不被遮挡。</p>
@@ -393,7 +393,7 @@ T &lt;= 50<br />
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>SP7001</div>
+      <div>SP7001 VLATTICE - Visible Lattice Points</div>
       <div>https://mrxyan6.github.io/2022/09/23/SP7001/</div>
     </div>
     <div class="license-meta">
@@ -436,9 +436,9 @@ T &lt;= 50<br />
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/09/24/UVA10891/" title="UVA10891">
+                      <a href="/2022/09/24/UVA10891/" title="UVA10891 Game of Sum">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">UVA10891</span>
+                        <span class="hidden-mobile">UVA10891 Game of Sum</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -446,8 +446,8 @@ T &lt;= 50<br />
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/09/15/P2512/" title="P2512">
-                        <span class="hidden-mobile">P2512</span>
+                      <a href="/2022/09/15/P2512/" title="P2512 糖果传递">
+                        <span class="hidden-mobile">P2512 糖果传递</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

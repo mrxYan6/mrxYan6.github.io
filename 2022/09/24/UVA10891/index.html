@@ -16,22 +16,22 @@
   <meta name="author" content="mrx">
   <meta name="keywords" content="algorithm,acm">
   
-    <meta name="description" content="2.UVA10891 Game of Sum  题目描述 有一个长度为 nnn 的整数序列，两个游戏者 AAA 和 BBB 轮流取数，AAA 先取。每次玩家只能从左端或者右端取任意数量的数，但不能两边都取。所有数都被取走视为游戏结束，然后统计每个人取走的数之和，作为各自的得分。两个人采取的策略都是让自己得分尽可能高，并且两个人都很机智，求 AAA 得分 - BBB 得分后的结果。 输入格式 输入">
+    <meta name="description" content="区间dp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UVA10891">
+<meta property="og:title" content="UVA10891 Game of Sum">
 <meta property="og:url" content="https://mrxyan6.github.io/2022/09/24/UVA10891/index.html">
 <meta property="og:site_name" content="mrx&#39;s blog">
-<meta property="og:description" content="2.UVA10891 Game of Sum  题目描述 有一个长度为 nnn 的整数序列，两个游戏者 AAA 和 BBB 轮流取数，AAA 先取。每次玩家只能从左端或者右端取任意数量的数，但不能两边都取。所有数都被取走视为游戏结束，然后统计每个人取走的数之和，作为各自的得分。两个人采取的策略都是让自己得分尽可能高，并且两个人都很机智，求 AAA 得分 - BBB 得分后的结果。 输入格式 输入">
+<meta property="og:description" content="区间dp">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-24T08:19:53.000Z">
-<meta property="article:modified_time" content="2022-09-24T08:20:32.506Z">
+<meta property="article:modified_time" content="2022-10-13T12:53:02.976Z">
 <meta property="article:author" content="mrx">
 <meta property="article:tag" content="dp">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>UVA10891 - mrx&#39;s blog</title>
+  <title>UVA10891 Game of Sum - mrx&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -214,7 +214,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="UVA10891"></span>
+            <span id="subtitle" data-typed-text="UVA10891 Game of Sum"></span>
           
         </div>
 
@@ -288,12 +288,14 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">UVA10891</h1>
+            <h1 style="display: none">UVA10891 Game of Sum</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="2uva10891-game-of-sum"><a class="markdownIt-Anchor" href="#2uva10891-game-of-sum"></a> 2.UVA10891 Game of Sum</h1>
+                <p>区间dp</p>
+<span id="more"></span>
+<h1 id="2uva10891-game-of-sum"><a class="markdownIt-Anchor" href="#2uva10891-game-of-sum"></a> 2.UVA10891 Game of Sum</h1>
 <h2 id="题目描述"><a class="markdownIt-Anchor" href="#题目描述"></a> 题目描述</h2>
 <p>有一个长度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 的整数序列，两个游戏者 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span> 轮流取数，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span> 先取。每次玩家只能从左端或者右端取任意数量的数，但不能两边都取。所有数都被取走视为游戏结束，然后统计每个人取走的数之和，作为各自的得分。两个人采取的策略都是让自己得分尽可能高，并且两个人都很机智，求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span> 得分 - <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span> 得分后的结果。</p>
 <p>输入格式</p>
@@ -363,7 +365,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>UVA10891</div>
+      <div>UVA10891 Game of Sum</div>
       <div>https://mrxyan6.github.io/2022/09/24/UVA10891/</div>
     </div>
     <div class="license-meta">
@@ -406,9 +408,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/09/24/hdu4746/" title="hdu4746">
+                      <a href="/2022/09/24/hdu4746/" title="hdu4746 Mophues">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">hdu4746</span>
+                        <span class="hidden-mobile">hdu4746 Mophues</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -416,8 +418,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/09/23/SP7001/" title="SP7001">
-                        <span class="hidden-mobile">SP7001</span>
+                      <a href="/2022/09/23/SP7001/" title="SP7001 VLATTICE - Visible Lattice Points">
+                        <span class="hidden-mobile">SP7001 VLATTICE - Visible Lattice Points</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
