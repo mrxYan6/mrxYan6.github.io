@@ -16,23 +16,23 @@
   <meta name="author" content="mrx">
   <meta name="keywords" content="algorithm,acm">
   
-    <meta name="description" content="数位dp一般题">
+    <meta name="description" content="数位dp稍微有难度的题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CFGYM104077E">
-<meta property="og:url" content="https://mrxyan6.github.io/2023/02/27/CFGYM104077E/index.html">
+<meta property="og:title" content="NK52189J">
+<meta property="og:url" content="https://mrxyan6.github.io/2023/02/27/NK52189J/index.html">
 <meta property="og:site_name" content="mrx&#39;s blog">
-<meta property="og:description" content="数位dp一般题">
+<meta property="og:description" content="数位dp稍微有难度的题">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-02-27T14:15:54.000Z">
-<meta property="article:modified_time" content="2023-02-27T14:18:03.946Z">
+<meta property="article:published_time" content="2023-02-27T14:24:15.000Z">
+<meta property="article:modified_time" content="2023-02-27T14:25:06.764Z">
 <meta property="article:author" content="mrx">
-<meta property="article:tag" content="dp">
-<meta property="article:tag" content="数位">
+<meta property="article:tag" content="构造">
+<meta property="article:tag" content="图论">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>CFGYM104077E - mrx&#39;s blog</title>
+  <title>NK52189J - mrx&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -215,7 +215,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="CFGYM104077E"></span>
+            <span id="subtitle" data-typed-text="NK52189J"></span>
           
         </div>
 
@@ -226,7 +226,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-02-27 22:15" pubdate>
+        <time datetime="2023-02-27 22:24" pubdate>
           2023年2月27日 晚上
         </time>
       </span>
@@ -239,7 +239,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          1.3kwords
+          2kwords
         
       </span>
     
@@ -251,7 +251,7 @@
         
         
           <!-- compatible with older versions-->
-          3minutes
+          5minutes
         
       </span>
     
@@ -289,19 +289,23 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">CFGYM104077E</h1>
+            <h1 style="display: none">NK52189J</h1>
             
             
               <div class="markdown-body">
                 
-                <p>数位dp一般题</p>
+                <p>数位dp稍微有难度的题</p>
 <span id="more"></span>
-<h1 id="cfgym104077-find-maximum"><a class="markdownIt-Anchor" href="#cfgym104077-find-maximum"></a> CFGYM104077 Find Maximum</h1>
-<h2 id="大意"><a class="markdownIt-Anchor" href="#大意"></a> 大意</h2>
-<p>求l和r之间三进制下popcount的大小</p>
+<h1 id="nk52185j-tree-constructer"><a class="markdownIt-Anchor" href="#nk52185j-tree-constructer"></a> NK52185J Tree Constructer</h1>
+<h2 id="题意"><a class="markdownIt-Anchor" href="#题意"></a> 题意</h2>
+<p>n个点的树，每个点分配<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo>&lt;</mo><mo>&lt;</mo><mn>60</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">[0,1&lt;&lt;60)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">6</span><span class="mord">0</span><span class="mclose">)</span></span></span></span>的点权，如果u与v的点权进行按位或之后等于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mn>60</mn></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2^{60}-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">6</span><span class="mord mtight">0</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>那么有边，否则没边。求合法的点权序列构造出给定的树。</p>
+<h2 id="分析"><a class="markdownIt-Anchor" href="#分析"></a> 分析</h2>
+<p>黑白染色之后构造分类方式</p>
+<p>读题之后发现，如果有某一位两个点都是0那么这两个点必定没有边，通过这个性质，对这个树进行黑白染色。<br />
+黑白染色之后，同色点之间必定没有边，那么使用两位二进制就可以把同色点全部分开。然后还剩下一些边为不相邻的黑白点之间的边，因为黑色点和白色点总和为n，那么必定有一种颜色的点的个数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>≤</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">\le \frac{1}{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>对于点数较小的集合，按照标号依次分配二进制位为0。对于另一个颜色的集合，其在分配的二进制位中只有与其相邻的异色点对应编号的二进制位位1，其他均为0。</p>
 <h2 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h2>
-<p>也用到了两个数字之间限制的tirck</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><br><span class="hljs-keyword">using</span> i64 = <span class="hljs-type">long</span> <span class="hljs-type">long</span>;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>	std::ios::<span class="hljs-built_in">sync_with_stdio</span>(<span class="hljs-literal">false</span>);<br>	std::cin.<span class="hljs-built_in">tie</span>(<span class="hljs-literal">nullptr</span>);<br><br><br>	<span class="hljs-type">int</span> t;<br>	std::cin &gt;&gt; t;<br>	<span class="hljs-keyword">while</span> (t--) &#123;<br>		i64 l, r;<br>		std::cin &gt;&gt; l &gt;&gt; r;<br>		<span class="hljs-keyword">auto</span> getstr = [&amp;](i64 x) &#123;<br>			std::vector&lt;<span class="hljs-type">int</span>&gt; ret;<br>			<span class="hljs-keyword">do</span> &#123;<br>				ret.<span class="hljs-built_in">emplace_back</span>(x % <span class="hljs-number">3</span>);<br>				x /= <span class="hljs-number">3</span>;<br>			&#125; <span class="hljs-keyword">while</span> (x);<br><span class="hljs-comment">//			std::reverse(ret.begin(), ret.end());</span><br>			<span class="hljs-keyword">return</span> ret;<br>		&#125;;<br>		<span class="hljs-keyword">auto</span> a = <span class="hljs-built_in">getstr</span>(l), b = <span class="hljs-built_in">getstr</span>(r);<br>		<span class="hljs-type">int</span> n = b.<span class="hljs-built_in">size</span>();<br>		<span class="hljs-keyword">if</span> (a.<span class="hljs-built_in">size</span>() != b.<span class="hljs-built_in">size</span>())a.<span class="hljs-built_in">resize</span>(b.<span class="hljs-built_in">size</span>());<br>		std::<span class="hljs-built_in">reverse</span>(a.<span class="hljs-built_in">begin</span>(), a.<span class="hljs-built_in">end</span>());<br>		std::<span class="hljs-built_in">reverse</span>(b.<span class="hljs-built_in">begin</span>(), b.<span class="hljs-built_in">end</span>());<br>		<span class="hljs-function">std::vector <span class="hljs-title">dp</span><span class="hljs-params">(n, std::array&lt;<span class="hljs-type">int</span>, <span class="hljs-number">8</span>&gt;&#123;<span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>&#125;)</span></span>;<br>		std::function&lt;<span class="hljs-type">int</span>(<span class="hljs-type">int</span>, <span class="hljs-type">int</span>)&gt; dfs = [&amp;](<span class="hljs-type">int</span> pos, <span class="hljs-type">int</span> stat) &#123;<br>			<span class="hljs-type">int</span> qd0 = stat &gt;&gt; <span class="hljs-number">2</span> &amp; <span class="hljs-number">1</span>;<br>			<span class="hljs-type">int</span> limita = stat &gt;&gt; <span class="hljs-number">1</span> &amp; <span class="hljs-number">1</span>;<br>			<span class="hljs-type">int</span> limitb = stat &amp; <span class="hljs-number">1</span>;<br>			<span class="hljs-keyword">if</span> (pos == n) &#123;<br>				<span class="hljs-keyword">return</span> qd0;<br>			&#125;<br>			<span class="hljs-keyword">if</span> (dp[pos][stat] != <span class="hljs-number">-1</span>)<span class="hljs-keyword">return</span> dp[pos][stat];<br>			<span class="hljs-type">int</span> l = limita ? a[pos] : <span class="hljs-number">0</span>;<br>			<span class="hljs-type">int</span> r = limitb ? b[pos] : <span class="hljs-number">2</span>;<br>			<span class="hljs-type">int</span> ans = <span class="hljs-number">0</span>;<br>			<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = l; i &lt;= r; ++i) &#123;<br>				<span class="hljs-type">int</span> nxt = <span class="hljs-number">0</span>;<br>				nxt |= (qd0 &amp;&amp; i == <span class="hljs-number">0</span>) &lt;&lt; <span class="hljs-number">2</span>;<br>				nxt |= (limita &amp;&amp; i == l) &lt;&lt; <span class="hljs-number">1</span>;<br>				nxt |= (limitb &amp;&amp; i == r);<br>				ans = std::<span class="hljs-built_in">max</span>(ans, (!(qd0 &amp;&amp; i == <span class="hljs-number">0</span>)) + i + <span class="hljs-built_in">dfs</span>(pos + <span class="hljs-number">1</span>, nxt));<br>			&#125;<br>			<span class="hljs-keyword">return</span> dp[pos][stat] = ans;<br>		&#125;;<br>		std::cout &lt;&lt; <span class="hljs-built_in">dfs</span>(<span class="hljs-number">0</span>, <span class="hljs-number">7</span>) &lt;&lt; <span class="hljs-string">&#x27;\n&#x27;</span>;<br>	&#125;<br><br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">//</span><br><span class="hljs-comment">// Created by mrx on 2023/2/27.</span><br><span class="hljs-comment">//</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;functional&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;algorithm&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;numeric&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cmath&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;queue&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;array&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;map&gt;</span></span><br><br><span class="hljs-keyword">using</span> i64 = <span class="hljs-type">long</span> <span class="hljs-type">long</span>;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int</span> n;<br><br>    std::cin &gt;&gt; n;<br>    <span class="hljs-function">std::vector <span class="hljs-title">adj</span><span class="hljs-params">(n, std::vector&lt;<span class="hljs-type">int</span>&gt;())</span></span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt; n; ++i) &#123;<br>        <span class="hljs-type">int</span> u, v;<br>        std::cin &gt;&gt; u &gt;&gt; v;<br>        u--, v--;<br>        adj[u].<span class="hljs-built_in">emplace_back</span>(v);<br>        adj[v].<span class="hljs-built_in">emplace_back</span>(u);<br>    &#125;<br><br>    std::vector&lt;std::vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">cl</span>(<span class="hljs-number">2</span>);<br>    <span class="hljs-function">std::vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">color</span><span class="hljs-params">(n)</span></span>;<br>    std::function&lt;<span class="hljs-type">void</span>(<span class="hljs-type">int</span>, <span class="hljs-type">int</span>, <span class="hljs-type">int</span>)&gt; dfs = [&amp;](<span class="hljs-type">int</span> u, <span class="hljs-type">int</span> p, <span class="hljs-type">int</span> c) &#123;<br>        cl[c].<span class="hljs-built_in">emplace_back</span>(u);<br>        color[u] = c;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> x: adj[u]) &#123;<br>            <span class="hljs-keyword">if</span> (x == p)<span class="hljs-keyword">continue</span>;<br>            <span class="hljs-built_in">dfs</span>(x, u, c ^ <span class="hljs-number">1</span>);<br>        &#125;<br>    &#125;;<br>    <span class="hljs-built_in">dfs</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);<br>    <span class="hljs-keyword">if</span> (cl[<span class="hljs-number">0</span>].<span class="hljs-built_in">size</span>() &gt; cl[<span class="hljs-number">1</span>].<span class="hljs-built_in">size</span>())std::<span class="hljs-built_in">swap</span>(cl[<span class="hljs-number">0</span>], cl[<span class="hljs-number">1</span>]);<br>    <span class="hljs-function">std::vector&lt;i64&gt; <span class="hljs-title">ans</span><span class="hljs-params">(n, (<span class="hljs-number">1ll</span> &lt;&lt; <span class="hljs-number">60</span>) - (<span class="hljs-number">1ll</span> &lt;&lt; cl[<span class="hljs-number">0</span>].size()))</span></span>;<br>    <span class="hljs-function">std::vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">pos</span><span class="hljs-params">(n, <span class="hljs-number">-1</span>)</span></span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; cl[<span class="hljs-number">0</span>].<span class="hljs-built_in">size</span>(); ++i)pos[cl[<span class="hljs-number">0</span>][i]] = i;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> x: cl[<span class="hljs-number">0</span>])ans[x] ^= <span class="hljs-number">1ll</span> &lt;&lt; <span class="hljs-number">59</span>, ans[x] ^= ((<span class="hljs-number">1ll</span> &lt;&lt; cl[<span class="hljs-number">0</span>].<span class="hljs-built_in">size</span>()) - <span class="hljs-number">1</span>) ^ <span class="hljs-number">1ll</span> &lt;&lt; pos[x];<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> x: cl[<span class="hljs-number">1</span>])ans[x] ^= <span class="hljs-number">1ll</span> &lt;&lt; <span class="hljs-number">58</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> x: cl[<span class="hljs-number">1</span>])<span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> v: adj[x])ans[x] ^= <span class="hljs-number">1ll</span> &lt;&lt; pos[v];<br><br><span class="hljs-comment">//    for (int i = 0; i &lt; n; ++i) &#123;</span><br><span class="hljs-comment">//        for (int j = i + 1; j &lt; n; ++j) &#123;</span><br><span class="hljs-comment">//            if ((ans[i] | ans[j]) == (1ll &lt;&lt; 60) - 1)std::cout &lt;&lt; i + 1 &lt;&lt; &#x27; &#x27; &lt;&lt; j + 1 &lt;&lt; &#x27;\n&#x27;;</span><br><span class="hljs-comment">//        &#125;</span><br><span class="hljs-comment">//    &#125;</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> x: ans)std::cout &lt;&lt; x &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span>;<br>&#125;<br><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    std::ios::<span class="hljs-built_in">sync_with_stdio</span>(<span class="hljs-literal">false</span>);<br>    std::cin.<span class="hljs-built_in">tie</span>(<span class="hljs-literal">nullptr</span>);<br>    std::cout.<span class="hljs-built_in">tie</span>(<span class="hljs-literal">nullptr</span>);<br>    <span class="hljs-built_in">solve</span>();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
                 
               </div>
             
@@ -324,15 +328,8 @@
   
     <span>></span>
     
-  <a href="/categories/acm/dp/" class="category-chain-item">dp</a>
+  <a href="/categories/acm/%E6%9E%84%E9%80%A0/" class="category-chain-item">构造</a>
   
-  
-    <span>></span>
-    
-  <a href="/categories/acm/dp/%E6%95%B0%E4%BD%8Ddp/" class="category-chain-item">数位dp</a>
-  
-  
-
   
 
   
@@ -348,9 +345,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/dp/">#dp</a>
+        <a href="/tags/%E6%9E%84%E9%80%A0/">#构造</a>
       
-        <a href="/tags/%E6%95%B0%E4%BD%8D/">#数位</a>
+        <a href="/tags/%E5%9B%BE%E8%AE%BA/">#图论</a>
       
     </div>
   
@@ -362,8 +359,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>CFGYM104077E</div>
-      <div>https://mrxyan6.github.io/2023/02/27/CFGYM104077E/</div>
+      <div>NK52189J</div>
+      <div>https://mrxyan6.github.io/2023/02/27/NK52189J/</div>
     </div>
     <div class="license-meta">
       
@@ -405,18 +402,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/02/27/NK52189J/" title="NK52189J">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">NK52189J</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/02/27/NK52189L/" title="NK52189L">
-                        <span class="hidden-mobile">NK52189L</span>
+                      <a href="/2023/02/27/CFGYM104077E/" title="CFGYM104077E">
+                        <span class="hidden-mobile">CFGYM104077E</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
